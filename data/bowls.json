@@ -1,0 +1,380 @@
+[
+  {
+    "name": "Bahamas Bowl",
+    "team1": "Miami (OH)",
+    "team2": "UAB",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/16/2022",
+    "time": "11:30 AM"
+  },
+  {
+    "name": "Cure Bowl",
+    "team1": "Troy",
+    "team2": "UT San Antonio",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/16/2022",
+    "time": "3:00 PM"
+  },
+  {
+    "name": "Fenway Bowl",
+    "team1": "Cincinnati",
+    "team2": "Louisville",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/17/2022",
+    "time": "11:00 AM"
+  },
+  {
+    "name": "Celebration Bowl",
+    "team1": "Jackson State",
+    "team2": "North Carolina Central",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/17/2022",
+    "time": "12:00 PM"
+  },
+  {
+    "name": "New Mexico Bowl",
+    "team1": "SMU",
+    "team2": "BYU",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/17/2022",
+    "time": "2:15 PM"
+  },
+  {
+    "name": "LA Bowl",
+    "team1": "Washington State",
+    "team2": "Fresno State",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/17/2022",
+    "time": "3:30 PM"
+  },
+  {
+    "name": "LendingTree Bowl",
+    "team1": "Rice",
+    "team2": "Southern Mississippi",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/17/2022",
+    "time": "5:45 PM"
+  },
+  {
+    "name": "Las Vegas Bowl",
+    "team1": "Oregon State",
+    "team2": "Florida",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/17/2022",
+    "time": "7:30 PM"
+  },
+  {
+    "name": "Fisco Bowl",
+    "team1": "Boise State",
+    "team2": "North Texas",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/17/2022",
+    "time": "9:15 PM"
+  },
+  {
+    "name": "Myrtle Beach Bowl",
+    "team1": "Marshall",
+    "team2": "Connecticut",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/19/2022",
+    "time": "2:30 PM"
+  },
+  {
+    "name": "Famous Idaho Potato Bowl",
+    "team1": "Eastern Michigan",
+    "team2": "San José State",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/20/2022",
+    "time": "3:30 PM"
+  },
+  {
+    "name": "Boca Raton Bowl",
+    "team1": "Liberty",
+    "team2": "Toledo",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/20/2022",
+    "time": "7:30 PM"
+  },
+  {
+    "name": "New Orleans Bowl",
+    "team1": "South Alabama",
+    "team2": "Western Kentucky",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/21/2022",
+    "time": "9:00 PM"
+  },
+  {
+    "name": "Armed Forces Bowl",
+    "team1": "Baylor",
+    "team2": "Air Force",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/22/2022",
+    "time": "7:30 PM"
+  },
+  {
+    "name": "Gasparilla Bowl",
+    "team1": "Wake Forest",
+    "team2": "Missouri",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/23/2022",
+    "time": "TBD"
+  },
+  {
+    "name": "Independence Bowl",
+    "team1": "Houston",
+    "team2": "Louisiana",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/23/2022",
+    "time": "TBD"
+  },
+  {
+    "name": "Hawaii Bowl",
+    "team1": "Middle Tennessee",
+    "team2": "San Diego State",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/24/2022",
+    "time": "8:00 PM"
+  },
+  {
+    "name": "Quick Lane Bowl",
+    "team1": "Bowling Green",
+    "team2": "New Mexico State",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/26/2022",
+    "time": "2:30 PM"
+  },
+  {
+    "name": "First Responder Bowl",
+    "team1": "Memphis",
+    "team2": "Utah State",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/27/2022",
+    "time": "TBD"
+  },
+  {
+    "name": "Birmingham Bowl",
+    "team1": "Coastal Carolina",
+    "team2": "East Carolina",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/27/2022",
+    "time": "TBD"
+  },
+  {
+    "name": "Camellia Bowl",
+    "team1": "Buffalo",
+    "team2": "Georgia Southern",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/27/2022",
+    "time": "12:00 PM"
+  },
+  {
+    "name": "Guaranteed Rate Bowl",
+    "team1": "Oklahoma State",
+    "team2": "Wisconsin",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/27/2022",
+    "time": "10:15 PM"
+  },
+  {
+    "name": "Military Bowl",
+    "team1": "Duke",
+    "team2": "UCF",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/28/2022",
+    "time": "2:00 PM"
+  },
+  {
+    "name": "Liberty Bowl",
+    "team1": "Arkansas",
+    "team2": "Kansas",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/28/2022",
+    "time": "5:30 PM"
+  },
+  {
+    "name": "Holiday Bowl",
+    "team1": "Oregon",
+    "team2": "North Carolina",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/28/2022",
+    "time": "8:00 PM"
+  },
+  {
+    "name": "Texas Bowl",
+    "team1": "Texas Tech",
+    "team2": "Ole Miss",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/28/2022",
+    "time": "9:00 PM"
+  },
+  {
+    "name": "Pinstripe Bowl",
+    "team1": "Minnesota",
+    "team2": "Syracuse",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/29/2022",
+    "time": "2:00 PM"
+  },
+  {
+    "name": "Cheez-It Bowl",
+    "team1": "Florida State",
+    "team2": "Oklahoma",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/29/2022",
+    "time": "5:30 PM"
+  },
+  {
+    "name": "Alamo Bowl",
+    "team1": "Washington",
+    "team2": "Texas",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/29/2022",
+    "time": "9:00 PM"
+  },
+  {
+    "name": "Orange Bowl",
+    "team1": "Tennessee",
+    "team2": "Clemson",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/30/2022",
+    "time": "TBD"
+  },
+  {
+    "name": "Duke's Mayo Bowl",
+    "team1": "NC State",
+    "team2": "Maryland",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/30/2022",
+    "time": "12:00 PM"
+  },
+  {
+    "name": "Sun Bowl",
+    "team1": "UCLA",
+    "team2": "Pittsburgh",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/30/2022",
+    "time": "2:00 PM"
+  },
+  {
+    "name": "Gator Bowl",
+    "team1": "South Carolina",
+    "team2": "Notre Dame",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/30/2022",
+    "time": "3:30 PM"
+  },
+  {
+    "name": "Arizona Bowl",
+    "team1": "Ohio",
+    "team2": "Wyoming",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/30/2022",
+    "time": "4:30 PM"
+  },
+  {
+    "name": "Peach Bowl",
+    "team1": "Georgia",
+    "team2": "Ohio State",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/31/2022",
+    "time": "TBD"
+  },
+  {
+    "name": "Fiesta Bowl",
+    "team1": "Michigan",
+    "team2": "TCU",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/31/2022",
+    "time": "TBD"
+  },
+  {
+    "name": "Music City Bowl",
+    "team1": "Iowa",
+    "team2": "Kentucky",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/31/2022",
+    "time": "12:00 PM"
+  },
+  {
+    "name": "Sugar Bowl",
+    "team1": "Alabama",
+    "team2": "Kansas State",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "12/17/2022",
+    "time": "12:00 PM"
+  },
+  {
+    "name": "ReliaQuest Bowl",
+    "team1": "Mississippi State",
+    "team2": "Illinois",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "01/02/2022",
+    "time": "12:00 PM"
+  },
+  {
+    "name": "Citrus Bowl",
+    "team1": "LSU",
+    "team2": "Purdue",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "01/02/2022",
+    "time": "1:00 PM"
+  },
+  {
+    "name": "Cotton Bowl",
+    "team1": "USC",
+    "team2": "Tulane",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "01/02/2022",
+    "time": "1:00 PM"
+  },
+  {
+    "name": "Rose Bowl",
+    "team1": "Utah",
+    "team2": "Penn State",
+    "team1Score": 0,
+    "team2Score": 0,
+    "date": "01/02/2022",
+    "time": "5:00 PM"
+  }
+]

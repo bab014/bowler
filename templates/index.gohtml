@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/output.css">
+  </head>
+  <body>
+    <h1 class="text-center text-6xl mt-2">Bowl Picker</h1> 
+    <p class="text-xl cursor-pointer text-center text-blue-600">&#128712;</p>{{/* info icon */}}
+
+    {{/* Form for the bowl picker */}}
+    <form class="my-12 mx-6" method="POST" action="/">
+      <div class="text-center mb-4">
+        <label class="text-xl" for="submitter">Name: </label>
+        <input type="text" name="submitter" id="submitter" class="border-b-2 border-gray-800 p-2" required>
+      </div>
+      <div class="flex flex-wrap justify-center">
+      {{/* loop through the bowl games */}}
+      {{ range . }}
+        <div class="border w-52 rounded py-2 px-4 mb-4 mx-2 hover:shadow-md">
+          <h1 class="text-xl">{{ .Name }}</h1>
+          <p class="text-xs font-semibold mb-2">{{ .Date }}</p>
+          <label for="{{ .Team1.School }}"><img class="inline" style="width:30px;" src="{{ index .Team1.Logos 0 }}" alt="team-logo"></label>
+          <input class="mr-2" name={{ .Name }} id="{{ .Team1.School }}" type="radio" value="{{ .Team1.School }}"><br>
+          <label for="{{ .Team2.School }}"><img class="inline" style="width:30px;" src="{{ index .Team2.Logos 0 }}" alt="team-logo"></label>
+          <input name={{ .Name }} id="{{ .Team2.School }}" type="radio" value="{{ .Team2.School }}"><br>
+        </div>
+      {{ end }}
+      </div> 
+      <input class="rounded cursor-pointer py-2 shadow-lg bg-blue-600 text-white font-semibold block w-1/2 mx-auto" type="submit" value="Submit Picks" >
+    </form>
+
+    <script>
+      const bowlForm = document.querySelector('form');
+      const submitButton = document.querySelector('input[type="submit"]');
+      const radioButtons = document.querySelectorAll('input[type="radio"]');
+      if (submitButton.disabled) {
+        submitButton.classList.remove("bg-blue-600");
+        submitButton.classList.remove("shadow-lg");
+        submitButton.style.cursor = "not-allowed";
+        submitButton.style.backgroundColor = "darkgray";
+        submitButton.value = "Selections Done";
+      }
+      let bGames = {};
+      for (let i = 0; i < radioButtons.length; i++) {
+        if (i % 2 == 0) {
+          bGames[radioButtons[i].name] = "";
+        }
+        radioButtons[i].addEventListener('change', function() {
+          if (this.checked) {
+            bGames[this.name] = this.value;
+          }
+        });
+      }
+      bowlForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const g = Object.keys(bGames);
+        let valid = false;
+        g.every((key) => {
+          if (bGames[key] == "") {
+            valid = false;
+            return false;
+          } else {
+            valid = true;
+            return true;
+          }
+        })
+        if (valid) {
+          console.log("valid");
+          bowlForm.submit();
+        } else {
+          console.log("invalid");
+          alert("Please fill out all games");
+        }
+      });
+    </script>
+  </body>
+</html>
