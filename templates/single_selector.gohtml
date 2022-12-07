@@ -1,0 +1,27 @@
+{{ $selItemClass := "text-blue-300 font-semibold hover:underline hover:decoration-amber-400 hover:underline-offset-8 hover:decoration-2 cursor-pointer" }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ .Name }}'s Selections</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/output.css" rel="stylesheet">
+  </head>
+  <body>
+  {{ template "header.gohtml" . }}
+  <div class="">
+    <div id="main" class="h-64 bg-gradient-to-l from-blue-900 to-blue-500 flex justify-center items-center">
+      <h2 class="text-blue-200 text-3xl font-semibold">{{ .Name }}'s dashboard</h2>
+    </div> 
+    <div id="selector-bar" class="bg-blue-900 py-2">
+      <ul class="flex w-full justify-around">
+        <li class="{{ $selItemClass }}">Games</li>
+        <li class="{{ $selItemClass }}">Picks</li>
+      </ul>
+    </div>
+    {{ range .Selections }}
+      {{ template "single_matchup.gohtml" . }}
+    {{ end }}
+  </div>
+  </body>
+</html>

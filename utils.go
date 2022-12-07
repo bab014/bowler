@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"io"
 	"os"
 )
 
@@ -85,4 +86,18 @@ func getBowlsData() ([]BowlGame, error) {
 	bGames := createBowlGames(teams, bowlGames)
 
 	return bGames, nil
+}
+
+func SelectionsDirIsEmpty() (bool, error) {
+	f, err := os.Open(SELECTIONS_DIR)
+	if err != nil {
+		return false, err
+	}
+	defer f.Close()
+
+	_, err = f.Readdirnames(1)
+	if err == io.EOF {
+		return true, nil
+	}
+	return false, err
 }

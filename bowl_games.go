@@ -2,8 +2,11 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
+	"io/fs"
 	"net/url"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -63,26 +66,61 @@ type Location struct {
 	Dome            bool    `json:"dome"`
 }
 
+// teamsFromFile reads the data/teams2022.json file and returns a slice of Team
+func teamsFromFile() ([]Team, error) {
+	var teams []Team
+	f, err := os.Open(TEAM_FILE)
+	if err != nil {
+		return teams, err
+	}
+	defer f.Close()
+
+	if err = json.NewDecoder(f).Decode(&teams); err != nil {
+		return teams, err
+	}
+
+	return teams, err
+}
+
 // Selection is the game and winner selection from a user
 type Selection struct {
-	GameName       string `json:"game_name,omitempty"`
-	SelectedWinner string `json:"selected_winner,omitempty"`
+	GameName       string   `json:"game_name,omitempty"`
+	SelectedWinner Team     `json:"selected_winner,omitempty"`
+	GameInfo       BowlGame `json:"game_info,omitempty"`
 }
 
 // Selections is a completed selections from a user
 type Selections []Selection
 
-func NewSelctions(v url.Values) Selections {
+func NewSelections(v url.Values) Selections {
+	tf, err := teamsFromFile()
+	if err != nil {
+		return nil
+	}
+	bgames, err := getBowlsData()
+	if err != nil {
+		return nil
+	}
 	var s Selections
 	for k, v := range v {
 		if k == "submitter" {
 			continue
 		}
-		s = append(s, Selection{
-			GameName:       k,
-			SelectedWinner: v[0],
-		})
+		for _, bg := range bgames {
+			if bg.Name == k {
+				for _, t := range tf {
+					if t.School == v[0] {
+						s = append(s, Selection{
+							GameName:       k,
+							SelectedWinner: t,
+							GameInfo:       bg,
+						})
+					}
+				}
+			}
+		}
 	}
+
 	return s
 }
 
@@ -109,7 +147,7 @@ func SelectionsFromFile(name string) (Selections, error) {
 	name = strings.ToLower(name)
 
 	// TODO: check if file exists first
-	f, err := os.Open(SELECTIONS_DIR + name + ".json")
+	f, err := os.Open(SELECTIONS_DIR + name)
 	if err != nil {
 		return s, err
 	}
@@ -120,4 +158,65 @@ func SelectionsFromFile(name string) (Selections, error) {
 	}
 
 	return s, err
+}
+
+// UserSelections is a map of user selections
+type UserSelections map[string]Selections
+
+func NewUserSelections() (UserSelections, error) {
+	us := make(UserSelections)
+
+	// check to make sure selections directory is not empty
+	t, err := SelectionsDirIsEmpty()
+	if err != nil {
+		return us, errors.New("no selections")
+	}
+	if t {
+		return us, errors.New("selections directory is empty")
+	}
+
+	// walk the data/selections directory and create the map of user selections
+	err = filepath.WalkDir(SELECTIONS_DIR, func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() && d.Name() == "selections" {
+			return nil
+		}
+
+		// get the selections from the file
+		s, err := SelectionsFromFile(d.Name())
+		if err != nil {
+			return err
+		}
+
+		bgames, err := getBowlsData()
+		if err != nil {
+			return err
+		}
+		for idx, game := range bgames {
+			for idx2, sel := range s {
+				if sel.GameName == game.Name {
+					s[idx], s[idx2] = sel, s[idx]
+				}
+			}
+
+		}
+
+		// use the filename as the key but capitalize the first letter
+		iName := d.Name()
+		il := strings.ToTitle(string(iName[0]))
+		bn := iName[1:]
+		name := il + strings.TrimSuffix(bn, filepath.Ext(bn))
+
+		// add the selections to the map with the name key
+		us[name] = s
+
+		return nil
+	})
+	if err != nil {
+		return us, err
+	}
+
+	return us, nil
 }

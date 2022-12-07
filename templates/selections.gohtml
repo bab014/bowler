@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>User Bowl Selections</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/output.css" rel="stylesheet">
+  </head>
+  <body>
+    {{ template "header.gohtml" . }} 
+    {{/* Expecting a map[user]Selections */}}
+    {{ with . }} {{/* If we have selection files */}}
+    <div class="mx-12 mt-4">
+    {{- $Dates := .Dates}}
+      {{- range $user, $selections := .Us }} 
+        <div class="">
+          <a class="cursor-pointer" href="/selections?name={{ $user }}"><h2 class="text-xl font-semibold">{{ $user }}</h2></a>
+          {{- range $date := $Dates }}
+            <div class="rounded my-2">
+              <h2 class="text-lg font-semibold">{{ $date }}</h2>
+              <ul>
+                {{- range $selection := $selections }}
+                  {{- if eq $selection.GameInfo.Date $date }}
+                    <li>{{ $selection.GameName }} - {{ $selection.SelectedWinner.School }}</li>
+                  {{- end }}
+                {{- end }} 
+              </ul>
+            </div>
+          {{- end }}
+        </div>
+      {{- end }}
+    </div>
+    {{ else }} {{/* No selections files */}}
+      <h2>Users have not made any selections yet</h2>
+    {{ end }}
+  </body>
+</html>

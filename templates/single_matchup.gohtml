@@ -1,0 +1,10 @@
+<div class="flex justify-between rounded shadow-lg mt-6 w-48">
+  {{ $Team1 := .GameInfo.Team1.School }}
+  {{ $Team2 := .GameInfo.Team2.School }}
+ <div class="{{ if eq .SelectedWinner.School $Team1 }}border border-lime-700{{ end }}">
+  <h2>{{ $Team1 }}</h2>
+ </div>
+ <div class="{{ if eq .SelectedWinner.School $Team2 }}border border-lime-700{{ end }}">
+  <h2>{{ $Team2 }}</h2>
+ </div>
+</div>
